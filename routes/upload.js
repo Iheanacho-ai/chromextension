@@ -4,7 +4,7 @@ const { uploadVideo, getVideo } = require('../controller/upload')
 const upload = require('../middleware/multer')
 
 
-router.post('/upload', upload.single('image'), uploadVideo)
+router.post('/upload', upload.single('video'), uploadVideo)
 router.get('/:public_id', getVideo)
 
 

@@ -8,7 +8,7 @@ const uploadVideo = async (req, res) => {
         return res.status(200).json({
             success: true,
             message: "Uploaded!",
-            data: result.public_id
+            public_id: result.public_id
         });
     } catch (error) {
         console.error(error);
