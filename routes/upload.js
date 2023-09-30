@@ -1,11 +1,11 @@
 const express = require('express')
 const router = express.Router();
-const { uploadVideo, getVideo } = require('../controller/upload')
+const { uploadVideo} = require('../controller/upload')
 const upload = require('../middleware/multer')
 
 
 router.post('/upload', upload.single('video'), uploadVideo)
-router.get('/:public_id', getVideo)
+
 
 
 
