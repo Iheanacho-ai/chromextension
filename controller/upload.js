@@ -3,7 +3,11 @@ const cloudinary = require('../utils/cloudinary');
 const uploadVideo = async (req, res) => {
     try {
         // Upload the video
-        const result = await cloudinary.uploader.upload(req.file.path, {resource_type: "auto", use_filename: true});
+        const result = await cloudinary.uploader.upload(req.file.path, {
+            resource_type: "auto", 
+            use_filename: true,
+            raw_convert: "google_speech"
+        });
         console.log(result);
         return res.status(200).json({
             success: true,
